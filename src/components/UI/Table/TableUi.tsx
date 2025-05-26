@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Space, Table, Tag, Avatar, Button, Row, Col, Card, Radio } from 'antd';
+import React, { useState } from 'react';
+import { Space, Table, Avatar, Button, Row, Col, Card, Radio } from 'antd';
 import type { TableProps } from 'antd';
 import { TableOutlined, UnorderedListOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 interface ApiDataType {
@@ -70,7 +70,7 @@ const TableUi: React.FC = ({ filteredData, onEdit, onDelete, loading }: any) => 
         />
       ) : (
         <Row gutter={[16, 16]}>
-          {filteredData.map((item) => (
+          {filteredData.map((item:any) => (
             <Col key={item.id} xs={24} sm={12} md={8} lg={6}>
               <div className="card-container">
                 <Card

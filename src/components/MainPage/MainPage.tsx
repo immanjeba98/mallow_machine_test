@@ -1,4 +1,5 @@
-import { Input, Button, Col, Row, Form, Avatar } from "antd";
+//@ts-nocheck
+import { Input, Button, Col, Row, Form } from "antd";
 import React, { memo, useEffect, useState } from "react";
 import TableUi from "../UI/Table/TableUi";
 import { connect } from "react-redux";

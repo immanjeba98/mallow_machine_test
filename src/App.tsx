@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+//@ts-nocheck
+import { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as Layout from "./layout";
 import * as Pages from "./components/index";

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, Input, Modal } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, Input, Modal } from 'antd';
 
 interface ModalPopupProps {
     isModalOpen: boolean;

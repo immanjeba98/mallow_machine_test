@@ -3,10 +3,12 @@ import { CREATE_USER_ACTIONS, DELETE_USER_ACTIONS, GET_DATA_ACTIONS, LOGIN_ACTIO
 const intialState = {
     loginData: [],
     isLoginLoader: false,
-    userData:{},
+    userData: {},
     isUserLoader: false,
-    createUser:{},
+    createUser: {},
     isCreateUserLoader: false,
+    delete: {},
+    isdeleteLoader: false,
 
 };
 
@@ -31,15 +33,25 @@ export const commonReducer = (state = intialState, { type, payload }: any) => {
         case GET_DATA_ACTIONS.GET_DATA_ERROR:
 
             return { ...state, userData: payload, isUserLoader: false };
-        // CREATE USER DATA
-        case DELETE_USER_ACTIONS.DELETE_USER_REQUEST:
+        // DELETE USER DATA
+        case CREATE_USER_ACTIONS.CREATE_USER_REQUEST:
             return { ...state, createUser: payload, isCreateUserLoader: false };
-        case DELETE_USER_ACTIONS.DELETE_USER_RESPONSE:
+        case CREATE_USER_ACTIONS.CREATE_USER_RESPONSE:
             return { ...state, createUser: payload, isCreateUserLoader: true };
+
+        case CREATE_USER_ACTIONS.CREATE_USER_ERROR:
+
+            return { ...state, createUser: payload, isCreateUserLoader: false };
+
+        // DELETE USER DATA
+        case DELETE_USER_ACTIONS.DELETE_USER_REQUEST:
+            return { ...state, delete: payload, isdeleteLoader: false };
+        case DELETE_USER_ACTIONS.DELETE_USER_RESPONSE:
+            return { ...state, delete: payload, isdeleteLoader: true };
 
         case DELETE_USER_ACTIONS.DELETE_USER_ERROR:
 
-            return { ...state, createUser: payload, isCreateUserLoader: false };
+            return { ...state, delete: payload, isdeleteLoader: false };
 
 
         //default

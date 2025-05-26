@@ -1,4 +1,3 @@
-import { createUser } from "../../redux/action/common";
 
 export interface ApiEndpoint {
   api: string;

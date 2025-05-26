@@ -1,3 +1,4 @@
+//@ts-nocheck
 import axios, { AxiosResponse, CancelTokenSource } from 'axios';
 import { axiosInstance } from "./utilities";
 import { EXIST_LOCAL_STORAGE } from "./constants";
@@ -49,11 +50,10 @@ export const api = async (payload: ApiPayload): Promise<any> => {
 
     // Set headers - safely access localStorage only on client
     const token = typeof window !== 'undefined' ? localStorage.getItem(EXIST_LOCAL_STORAGE.AUTHTOKEN) : null;
-    const apiKey = 'reqres-free-v1';
 
     axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token || ""}`;
     // axiosInstance.defaults.headers.common["API-Key"] = apiKey || "";
-    axiosInstance.defaults.headers.common["x-api-key"] = 'reqres-free-v1' || "";
+    axiosInstance.defaults.headers.common["x-api-key"] = 'reqres-free-v1';
 
     if (isFormData) {
       axiosInstance.defaults.headers["Content-Type"] = "multipart/form-data";
