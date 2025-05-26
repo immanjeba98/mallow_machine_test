@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as commonAction from "../../redux/action/common";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, Row, Col, Alert, notification, Modal } from 'antd';
+import { Button, Checkbox, Form, Input, Row, Col, Alert } from 'antd';
 import { setStorage } from '../../services/helperFunctions';
 import { EXIST_LOCAL_STORAGE } from '../../services/constants';
 import { useNavigate } from 'react-router-dom';
